@@ -42,5 +42,6 @@ def argument_to_param(argument, rule, override=None):
         param['format'] = format_
     if rule.defaults and argument in rule.defaults:
         param['default'] = rule.defaults[argument]
+        param['required'] = False
     param.update(override or {})
     return param
